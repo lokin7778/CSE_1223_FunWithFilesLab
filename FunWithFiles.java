@@ -21,12 +21,16 @@ public class FunWithFiles {
     * @param fname file to be displayed
     */
    public static void displayFile(String fname){
-    
+
         try (BufferedReader reader = new BufferedReader(new FileReader("jabberwock.txt"))){
 
+            String line;
+            while ((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
         }
         catch (IOException e){
-            
+            System.err.println("ERROR - File " + fname + " not found!");
         }
    }
    
