@@ -30,7 +30,7 @@ public class FunWithFiles {
             }
         }
         catch (IOException e){
-            System.err.println("ERROR - File " + fname + " not found!");
+            System.out.println("ERROR - File " + fname + " not found!");
         }
    }
    
