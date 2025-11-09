@@ -22,22 +22,31 @@ public class FunWithFiles {
     */
    public static void displayFile(String fname){
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("jabberwock.txt"))){
+        // try-block to read the file in using thr BufferedReader object
+        try (BufferedReader reader = new BufferedReader(new FileReader(fname))){
 
             String line;
+            // while loop to read the file's contents until there are none
             while ((line = reader.readLine()) != null){
-                System.out.println(line);
+                System.out.println(line); // print out the line to the console
             }
         }
         catch (IOException e){
-            System.out.println("ERROR - File " + fname + " not found!");
+            System.out.println("ERROR - File " + fname + " not found!"); // display this message if the file is not found
         }
+
    }
    
 
     public static void main(String[] args) {
-      //TODO: Prompt the user for a filename        
+      
+        Scanner console = new Scanner(System.in); // creates a new Scanner object 'console'       
 
+        System.out.print("Enter a filename: ");
+        String inputFile = console.nextLine(); // reads in the input file's name from the user's keyboard
+
+        displayFile(inputFile);
+        console.close();
     }
 
 }
