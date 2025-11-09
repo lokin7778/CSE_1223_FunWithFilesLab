@@ -1,5 +1,5 @@
 /**
- * Program to copy one file into another, using command line arguments
+ * Program to display the contents of one file to the output console
  *
  * @author Lokesh Narasimhan
  * @author none
@@ -45,8 +45,8 @@ public class FunWithFiles {
         System.out.print("Enter a filename: ");
         String inputFile = console.nextLine(); // reads in the input file's name from the user's keyboard
 
-        displayFile(inputFile);
-        console.close();
+        displayFile(inputFile); // call the displayFile method to print out each line
+        console.close(); // close the scanner object
     }
 
 }
