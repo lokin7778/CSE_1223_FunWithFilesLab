@@ -6,8 +6,11 @@
  * @version 11/09/2025
  *
  */
-import java.io.FileNotFoundException;
-import java.io.File;
+
+// import all of the necessary libraries 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FunWithFiles {
@@ -17,13 +20,13 @@ public class FunWithFiles {
     * 
     * @param fname file to be displayed
     */
-   public static void displayFile(String fname) {
-        //TODO: Open the file and print each line to the screen.
-        //TODO: Don't forget to close the file when you are done.
-        try {
+   public static void displayFile(String fname){
+    
+        try (BufferedReader reader = new BufferedReader(new FileReader("jabberwock.txt"))){
 
-        } catch (FileNotFoundException e) {
-
+        }
+        catch (IOException e){
+            
         }
    }
    
